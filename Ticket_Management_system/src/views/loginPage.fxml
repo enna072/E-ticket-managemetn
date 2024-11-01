@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="800.0" stylesheets="@../CssFiles/style.css" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginPageController">
+   <children>
+      <BorderPane layoutX="271.0" layoutY="176.0" prefHeight="200.0" prefWidth="200.0" styleClass="background" stylesheets="@../CssFiles/style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <HBox alignment="CENTER" prefHeight="66.0" prefWidth="800.0" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fitHeight="66.0" fitWidth="73.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/etickettransparentclolured.png" />
+                     </image>
+                  </ImageView>
+                  <Pane prefHeight="66.0" prefWidth="422.0" />
+                  <HBox alignment="CENTER" prefHeight="66.0" prefWidth="295.0">
+                     <children>
+                        <Button fx:id="signup" mnemonicParsing="false" onAction="#gotoSignupPage" prefHeight="30.0" prefWidth="61.0" styleClass="signupButton" stylesheets="@../CssFiles/style.css" text="Signup" textFill="WHITE">
+                           <font>
+                              <Font name="Cambria" size="12.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets right="30.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button mnemonicParsing="false" prefHeight="30.0" styleClass="viewAsAGuestButton" stylesheets="@../CssFiles/style.css" text="View as guest" textFill="WHITE">
+                           <font>
+                              <Font name="Cambria" size="12.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+         </top>
+         <bottom>
+            <HBox alignment="CENTER" prefHeight="634.0" prefWidth="762.0" BorderPane.alignment="CENTER">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="634.0" prefWidth="462.0">
+                     <children>
+                        <Label prefHeight="115.0" prefWidth="358.0" text="WELCOME TO" textFill="#ff991c">
+                           <font>
+                              <Font name="System Bold" size="51.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="76.0" prefWidth="307.0" text="MY TICKET" textFill="#ff991c">
+                           <font>
+                              <Font size="58.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" prefHeight="611.0" prefWidth="340.0" stylesheets="@../CssFiles/style.css">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <HBox.margin>
+                        <Insets bottom="50.0" right="20.0" top="50.0" />
+                     </HBox.margin>
+                     <styleClass>
+                        <String fx:value="loginSection" />
+                        <String fx:value="boxShadow" />
+                     </styleClass>
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="38.0" prefWidth="380.0" stylesheets="@../CssFiles/style.css">
+                           <children>
+                              <TextField prefHeight="26.0" prefWidth="228.0" promptText="Enter username" styleClass="transparentback" stylesheets="@../CssFiles/style.css">
+                                 <HBox.margin>
+                                    <Insets right="10.0" />
+                                 </HBox.margin>
+                              </TextField>
+                              <ImageView fitHeight="29.0" fitWidth="56.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/profile.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="20.0" left="30.0" right="30.0" />
+                           </VBox.margin>
+                           <styleClass>
+                              <String fx:value="logininputBox" />
+                              <String fx:value="boxShadow" />
+                           </styleClass>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="38.0" prefWidth="380.0" stylesheets="@../CssFiles/style.css">
+                           <children>
+                              <TextField prefHeight="26.0" prefWidth="228.0" promptText="Enter password" styleClass="transparentback" stylesheets="@../CssFiles/style.css">
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </TextField>
+                              <ImageView fitHeight="29.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/passkey.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                           <VBox.margin>
+                              <Insets left="30.0" right="30.0" top="30.0" />
+                           </VBox.margin>
+                           <styleClass>
+                              <String fx:value="logininputBox" />
+                              <String fx:value="boxShadow" />
+                           </styleClass>
+                        </HBox>
+                        <Button mnemonicParsing="false" styleClass="loginButton" stylesheets="@../CssFiles/style.css" text="Login" textFill="WHITE">
+                           <VBox.margin>
+                              <Insets top="50.0" />
+                           </VBox.margin>
+                        </Button>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </bottom>
+      </BorderPane>
+   </children>
+</AnchorPane>
