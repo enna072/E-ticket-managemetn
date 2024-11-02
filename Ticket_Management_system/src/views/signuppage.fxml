@@ -126,7 +126,7 @@
                                     </CheckBox>
                                  </children>
                               </HBox>
-                              <Button mnemonicParsing="false" style="-fx-background-color: #ff991c; -fx-text-fill: #FFFFFF; -fx-background-radius: 20;" text="Join" />
+                              <Button fx:id="joinButton" mnemonicParsing="false" onAction="#goToCongratulationPage" style="-fx-background-color: #ff991c; -fx-text-fill: #FFFFFF; -fx-background-radius: 20;" text="Join" />
                            </children>
                         </VBox>
                         <VBox alignment="CENTER" prefHeight="563.0" prefWidth="300.0">

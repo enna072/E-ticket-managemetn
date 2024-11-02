@@ -20,6 +20,7 @@ public class LoginPage extends Application {
         Image icon=new Image("/mainlogo.png");
         stage.getIcons().add(icon);
         stage.show();
+
         stage.setResizable(false);
     }
 

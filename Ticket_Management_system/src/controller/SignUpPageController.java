@@ -1,10 +1,12 @@
 package controller;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
@@ -15,7 +17,8 @@ public class SignUpPageController {
     public Stage stage;
     @FXML
     private ImageView backtoHome;
-
+    @FXML
+    private Button joinButton;
     @FXML
     void gotoHomePage(MouseEvent event) throws IOException {
         Parent parent= FXMLLoader.load(getClass().getResource("/views/loginPage.fxml"));
@@ -26,5 +29,16 @@ public class SignUpPageController {
         stage.show();
 
     }
+
+
+    @FXML
+    void goToCongratulationPage(ActionEvent event) throws IOException {
+        Parent root=FXMLLoader.load(getClass().getResource("/views/confirm_sign_up.fxml"));
+        Stage stage=(Stage) ((Node)event.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(root));
+        stage.show();
+    }
+
+
 
 }
