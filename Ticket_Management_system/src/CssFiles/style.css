@@ -66,6 +66,7 @@
 
 .homepagebuttons{
 -fx-background-color:#ff991c;
+-fx-text-fill:#000000;
 -fx-background-radius:30;
 }
 
@@ -77,4 +78,18 @@
 .login_in_successfull_login_box{
 -fx-background-color:#ff991c;
 -fx-text-fill:#FFFFFF;
+}
+
+.homepageButtonHolder{
+-fx-background-color:#FFFFFF;
+-fx-background-radius:30;
+}
+
+.whiteBackgroundBoxForSearchBus{
+-fx-background-color:#FFFFFF;
+-fx-background-radius:30;
+}
+
+.transparentInputboxforsearchBus{
+-fx-background-color:transparent;
 }
