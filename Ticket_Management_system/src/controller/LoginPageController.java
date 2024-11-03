@@ -40,36 +40,36 @@ public class LoginPageController {
     void goToHomePage(ActionEvent event) throws IOException {
         String user_name = UserNameTextBox.getText();
         String password = PassWorDTextBox.getText();
-        if (dataController.validateuserAndpass(user_name, password)) {
+       // if (dataController.validateuserAndpass(user_name, password)) {
             Parent root = FXMLLoader.load(getClass().getResource("/views/home_page.fxml"));
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stage.setScene(new Scene(root));
             stage.show();
-        } else {
-            String title,header,content;
-            Alert alert = new Alert(Alert.AlertType.WARNING);
-            if(user_name.isEmpty()||password.isEmpty()){
-                title="missing input";
-                if(user_name.isEmpty()){
-                    header="User name is missing";
-                    content="Enter user name";
-                }
-                else {
-                    header="password is missing";
-                    content="enter password";
-                }
-            }
-            else{
-                title="Worng input";
-                header="password doesn't match with the username";
-                content="enter correct password";
-            }
-            alert.setTitle(title);
-            alert.setHeaderText(header);
-            alert.setContentText(content);
-            alert.showAndWait();
-
-        }
+//        } else {
+//            String title,header,content;
+//            Alert alert = new Alert(Alert.AlertType.WARNING);
+//            if(user_name.isEmpty()||password.isEmpty()){
+//                title="missing input";
+//                if(user_name.isEmpty()){
+//                    header="User name is missing";
+//                    content="Enter user name";
+//                }
+//                else {
+//                    header="password is missing";
+//                    content="enter password";
+//                }
+//            }
+//            else{
+//                title="Worng input";
+//                header="password doesn't match with the username";
+//                content="enter correct password";
+//            }
+//            alert.setTitle(title);
+//            alert.setHeaderText(header);
+//            alert.setContentText(content);
+//            alert.showAndWait();
+//
+//        }
     }
 
 
