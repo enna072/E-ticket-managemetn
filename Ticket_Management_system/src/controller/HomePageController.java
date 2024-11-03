@@ -23,5 +23,14 @@ public class HomePageController {
         stage.setScene(new Scene(root));
         stage.show();
     }
+    @FXML
+    void goToLoginPage(MouseEvent event) throws IOException {
+        Stage stage=(Stage) ((Node)event.getSource()).getScene().getWindow();
+        Parent root=FXMLLoader.load(getClass().getResource("/views/loginPage.fxml"));
+
+        stage.setScene(new Scene(root));
+        stage.show();
+
+    }
 
 }

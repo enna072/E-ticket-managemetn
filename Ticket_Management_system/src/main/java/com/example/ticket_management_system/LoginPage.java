@@ -1,5 +1,6 @@
 package com.example.ticket_management_system;
 
+import controller.dataController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -17,14 +18,16 @@ public class LoginPage extends Application {
         stage.setTitle("Hello!");
         stage.setScene(scene);
         stage.setTitle("MY TICKET");
-        Image icon=new Image("/mainlogo.png");
+        Image icon = new Image("/mainlogo.png");
         stage.getIcons().add(icon);
         stage.show();
 
         stage.setResizable(false);
+
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException, ClassNotFoundException {
         launch();
+        dataController.retrive();
     }
 }
