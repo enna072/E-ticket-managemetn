@@ -21,16 +21,41 @@
          <top>
             <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
                <children>
-                  <HBox alignment="CENTER" prefHeight="46.0" prefWidth="800.0" style="-fx-background-color: #ff991c;">
+                  <HBox prefHeight="46.0" prefWidth="800.0" style="-fx-background-color: #F3921B;">
                      <children>
+                        <StackPane prefHeight="37.0" prefWidth="89.0">
+                           <children>
+                              <Label fx:id="MenuClose" text="MENU">
+                                 <graphic>
+                                    <ImageView fx:id="menu1" fitHeight="36.0" fitWidth="110.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/menubar.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Label>
+                              <Label fx:id="Menu" text="MENU">
+                                 <graphic>
+                                    <ImageView fx:id="menu" fitHeight="36.0" fitWidth="110.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/menubar.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Label>
+                           </children>
+                        </StackPane>
                         <Label text="MY TICKET" textFill="WHITE">
                            <font>
                               <Font name="Onyx" size="32.0" />
                            </font>
+                           <HBox.margin>
+                              <Insets left="20.0" />
+                           </HBox.margin>
                         </Label>
                      </children>
                   </HBox>
-                  <StackPane prefHeight="309.0" prefWidth="793.0">
+                  <StackPane prefHeight="309.0" prefWidth="776.0">
                      <children>
                         <ImageView fitHeight="320.0" fitWidth="808.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -134,6 +159,101 @@
                               <Insets bottom="20.0" top="260.0" />
                            </StackPane.margin>
                         </HBox>
+                        <VBox fx:id="Slider" alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0">
+                           <StackPane.margin>
+                              <Insets right="630.0" />
+                           </StackPane.margin>
+                           <children>
+                              <HBox alignment="CENTER" prefHeight="32.0" prefWidth="162.0" style="-fx-background-color: #FFFFFF;" styleClass="round" stylesheets="@../CssFiles/style.css">
+                                 <children>
+                                    <ImageView fitHeight="32.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/dashboard.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Label alignment="CENTER" prefHeight="18.0" prefWidth="110.0" text="DASHBOARD" textAlignment="CENTER">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" left="5.0" right="5.0" top="20.0" />
+                                 </VBox.margin>
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                              </HBox>
+                              <HBox fx:id="profile" alignment="CENTER" onMousePressed="#goToProfileView" prefHeight="32.0" prefWidth="162.0" style="-fx-background-color: #FFFFFF;" styleClass="round" stylesheets="@../CssFiles/style.css">
+                                 <children>
+                                    <ImageView fitHeight="32.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/profilee.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Label alignment="CENTER" prefHeight="18.0" prefWidth="110.0" text="PROFILE" textAlignment="CENTER">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" left="5.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="32.0" prefWidth="162.0" style="-fx-background-color: #FFFFFF;" styleClass="round" stylesheets="@../CssFiles/style.css">
+                                 <children>
+                                    <ImageView fitHeight="32.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/pay.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Label alignment="CENTER" prefHeight="18.0" prefWidth="110.0" text="PAYMENT" textAlignment="CENTER">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" left="5.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox fx:id="gotToFoodItem" alignment="CENTER" onMousePressed="#goToFoodItemPage" prefHeight="32.0" prefWidth="162.0" style="-fx-background-color: #FFFFFF;" styleClass="round" stylesheets="@../CssFiles/style.css">
+                                 <children>
+                                    <ImageView fitHeight="32.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/food.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Label alignment="CENTER" prefHeight="18.0" prefWidth="110.0" text="FOOD ITEM" textAlignment="CENTER">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" left="5.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="32.0" prefWidth="162.0" style="-fx-background-color: #FFFFFF;" styleClass="round" stylesheets="@../CssFiles/style.css">
+                                 <children>
+                                    <ImageView fitHeight="32.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/customercare.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Label alignment="CENTER" prefHeight="18.0" prefWidth="110.0" text="HELP LINE" textAlignment="CENTER">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets left="5.0" />
+                                 </VBox.margin>
+                              </HBox>
+                           </children>
+                        </VBox>
                      </children>
                   </StackPane>
                </children>

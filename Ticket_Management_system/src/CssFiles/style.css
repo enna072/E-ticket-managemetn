@@ -93,3 +93,13 @@
 .transparentInputboxforsearchBus{
 -fx-background-color:transparent;
 }
+
+.round{
+-fx-background-radius:20;
+}
+
+.roundBOx{
+-fx-background-color:#FFFFFF;
+-fx_background-radius:30:
+-fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 10, 0.5, 5, 5);
+}

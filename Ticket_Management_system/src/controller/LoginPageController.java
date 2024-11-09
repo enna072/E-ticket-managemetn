@@ -1,5 +1,6 @@
 package controller;
 
+import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -9,7 +10,9 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 import java.io.IOException;
 
@@ -40,11 +43,21 @@ public class LoginPageController {
     void goToHomePage(ActionEvent event) throws IOException {
         String user_name = UserNameTextBox.getText();
         String password = PassWorDTextBox.getText();
-       // if (dataController.validateuserAndpass(user_name, password)) {
-            Parent root = FXMLLoader.load(getClass().getResource("/views/home_page.fxml"));
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            stage.setScene(new Scene(root));
-            stage.show();
+        // if (dataController.validateuserAndpass(user_name, password)) {
+        Parent root = FXMLLoader.load(getClass().getResource("/views/home_page.fxml"));
+        VBox Slider = (VBox) root.lookup("#Slider");
+        TranslateTransition slide = new TranslateTransition();
+        slide.setDuration(Duration.seconds(0.001));
+        slide.setNode(Slider);
+
+        slide.setToX(-177.6);
+        slide.play();
+
+        Slider.setTranslateX(0);
+
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(root));
+        stage.show();
 //        } else {
 //            String title,header,content;
 //            Alert alert = new Alert(Alert.AlertType.WARNING);
