@@ -18,7 +18,7 @@ public class DatabaseHandler {
     public DatabaseHandler() {
 
         try {
-
+// COMMENT ADDED
             connection = DriverManager.getConnection(URL, USER, PASSWORD);
         } catch (SQLException e) {
             throw new RuntimeException(e);
