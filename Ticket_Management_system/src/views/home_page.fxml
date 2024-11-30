@@ -159,7 +159,7 @@
                               <Insets bottom="20.0" top="260.0" />
                            </StackPane.margin>
                         </HBox>
-                        <VBox fx:id="Slider" alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0">
+                        <VBox fx:id="Slider" alignment="TOP_CENTER" prefHeight="306.0" prefWidth="194.0" style="-fx-background-color: #FFFFFF;">
                            <StackPane.margin>
                               <Insets right="630.0" />
                            </StackPane.margin>

@@ -1,5 +1,7 @@
 package controller;
 
+import DatabaseHandling.DatabaseHandler;
+import EntityClasses.EntityUser;
 import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -15,6 +17,7 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 
 import java.io.IOException;
+import java.util.List;
 
 public class LoginPageController {
 
@@ -43,46 +46,50 @@ public class LoginPageController {
     void goToHomePage(ActionEvent event) throws IOException {
         String user_name = UserNameTextBox.getText();
         String password = PassWorDTextBox.getText();
-        // if (dataController.validateuserAndpass(user_name, password)) {
-        Parent root = FXMLLoader.load(getClass().getResource("/views/home_page.fxml"));
-        VBox Slider = (VBox) root.lookup("#Slider");
-        TranslateTransition slide = new TranslateTransition();
-        slide.setDuration(Duration.seconds(0.001));
-        slide.setNode(Slider);
+        DatabaseHandler databaseHandler = new DatabaseHandler();
+        List<EntityUser> list = databaseHandler.userValidation(user_name);
+        int size = list.size();
+        if (user_name.isEmpty() || password.isEmpty() || size == 0 || !(list.get(0).getPassword().equals(password))) {
+            String title, header, content;
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            if (user_name.isEmpty() || password.isEmpty()) {
+                title = "missing input";
+                if (user_name.isEmpty()) {
+                    header = "EntityUser name is missing";
+                    content = "Enter user name";
+                } else {
+                    header = "password is missing";
+                    content = "enter password";
+                }
+            } else {
+                title = "Worng input";
+                header = "password doesn't match with the username";
+                content = "enter correct password";
+            }
+            alert.setTitle(title);
+            alert.setHeaderText(header);
+            alert.setContentText(content);
+            alert.showAndWait();
 
-        slide.setToX(-177.6);
-        slide.play();
+        } else {
 
-        Slider.setTranslateX(0);
 
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.setScene(new Scene(root));
-        stage.show();
-//        } else {
-//            String title,header,content;
-//            Alert alert = new Alert(Alert.AlertType.WARNING);
-//            if(user_name.isEmpty()||password.isEmpty()){
-//                title="missing input";
-//                if(user_name.isEmpty()){
-//                    header="User name is missing";
-//                    content="Enter user name";
-//                }
-//                else {
-//                    header="password is missing";
-//                    content="enter password";
-//                }
-//            }
-//            else{
-//                title="Worng input";
-//                header="password doesn't match with the username";
-//                content="enter correct password";
-//            }
-//            alert.setTitle(title);
-//            alert.setHeaderText(header);
-//            alert.setContentText(content);
-//            alert.showAndWait();
-//
-//        }
+            Parent root = FXMLLoader.load(getClass().getResource("/views/home_page.fxml"));
+            VBox Slider = (VBox) root.lookup("#Slider");
+            TranslateTransition slide = new TranslateTransition();
+            slide.setDuration(Duration.seconds(0.001));
+            slide.setNode(Slider);
+
+            slide.setToX(-177.6);
+            slide.play();
+
+            Slider.setTranslateX(0);
+
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.show();
+
+        }
     }
 
 

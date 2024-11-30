@@ -42,6 +42,7 @@
                      <children>
                         <Label text="Congratulation, Your account has" />
                         <Label text="been created successfully!" />
+                        <Label fx:id="user_name_holder" text="user_name: " />
                         <Button fx:id="goToLoginPage" mnemonicParsing="false" onAction="#goTOLoginPage" styleClass="login_in_successfull_login_box" stylesheets="@../CssFiles/style.css" text="Login" textFill="#151515">
                            <VBox.margin>
                               <Insets top="30.0" />

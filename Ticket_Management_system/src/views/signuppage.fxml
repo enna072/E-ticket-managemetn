@@ -74,7 +74,7 @@
                            <children>
                               <HBox alignment="CENTER" prefHeight="42.0" prefWidth="285.0" styleClass="signupinputBox" stylesheets="@../CssFiles/style.css">
                                  <children>
-                                    <TextField prefHeight="26.0" prefWidth="245.0" promptText="Enter first name" styleClass="transparentback" stylesheets="@../CssFiles/style.css" />
+                                    <TextField fx:id="first_name_text_field" prefHeight="26.0" prefWidth="245.0" promptText="Enter first name" styleClass="transparentback" stylesheets="@../CssFiles/style.css" />
                                  </children>
                                  <VBox.margin>
                                     <Insets bottom="50.0" left="20.0" right="20.0" />
@@ -82,7 +82,7 @@
                               </HBox>
                               <HBox alignment="CENTER" prefHeight="42.0" prefWidth="285.0" styleClass="signupinputBox" stylesheets="@../CssFiles/style.css">
                                  <children>
-                                    <TextField prefHeight="26.0" prefWidth="245.0" promptText="Enter last name" styleClass="transparentback" stylesheets="@../CssFiles/style.css">
+                                    <TextField fx:id="last_name_text_field" prefHeight="26.0" prefWidth="245.0" promptText="Enter last name" styleClass="transparentback" stylesheets="@../CssFiles/style.css">
                                        <HBox.margin>
                                           <Insets />
                                        </HBox.margin>
@@ -94,7 +94,7 @@
                               </HBox>
                               <HBox alignment="CENTER" prefHeight="42.0" prefWidth="285.0" styleClass="signupinputBox" stylesheets="@../CssFiles/style.css">
                                  <children>
-                                    <TextField prefHeight="26.0" prefWidth="245.0" promptText="Phone number" styleClass="transparentback" stylesheets="@../CssFiles/style.css" />
+                                    <TextField fx:id="phone_number_text_field" prefHeight="26.0" prefWidth="245.0" promptText="Phone number" styleClass="transparentback" stylesheets="@../CssFiles/style.css" />
                                     <ImageView fitHeight="24.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../images/contact_phone_24dp_5F6368.png" />
@@ -113,13 +113,13 @@
                                     <Insets bottom="50.0" top="20.0" />
                                  </padding>
                                  <children>
-                                    <CheckBox mnemonicParsing="false" style="-fx-border-color: #FDFBD4;" text="Male">
+                                    <CheckBox fx:id="male_check_box" mnemonicParsing="false" onAction="#male_check_box_click" style="-fx-border-color: #FDFBD4;" text="Male">
                                        <HBox.margin>
                                           <Insets left="20.0" right="10.0" />
                                        </HBox.margin>
                                     </CheckBox>
-                                    <CheckBox mnemonicParsing="false" text="Female" />
-                                    <CheckBox mnemonicParsing="false" text="Others">
+                                    <CheckBox fx:id="female_check_box" mnemonicParsing="false" onAction="#female_check_box_click" text="Female" />
+                                    <CheckBox fx:id="others_check_box" mnemonicParsing="false" onAction="#other_check_box_click" text="Others">
                                        <HBox.margin>
                                           <Insets left="10.0" />
                                        </HBox.margin>
@@ -133,7 +133,7 @@
                            <children>
                               <HBox alignment="CENTER" prefHeight="42.0" prefWidth="285.0" styleClass="signupinputBox" stylesheets="@../CssFiles/style.css">
                                  <children>
-                                    <TextField prefHeight="26.0" prefWidth="170.0" promptText="Enter Email" styleClass="transparentback" stylesheets="@../CssFiles/style.css" />
+                                    <TextField fx:id="email_text_field" prefHeight="26.0" prefWidth="170.0" promptText="Enter Email" styleClass="transparentback" stylesheets="@../CssFiles/style.css" />
                                     <ImageView fitHeight="24.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../images/email_24dp_5F6368.png" />
@@ -149,7 +149,7 @@
                               </HBox>
                               <HBox alignment="CENTER" prefHeight="42.0" prefWidth="285.0" styleClass="signupinputBox" stylesheets="@../CssFiles/style.css">
                                  <children>
-                                    <DatePicker prefHeight="26.0" prefWidth="188.0" promptText="Enter date of birth" style="-fx-background-color: #FFFFFF;" styleClass="datepicker" stylesheets="@../CssFiles/style.css" />
+                                    <DatePicker fx:id="datePicker" prefHeight="26.0" prefWidth="188.0" promptText="Enter date of birth" style="-fx-background-color: #FFFFFF;" styleClass="datepicker" stylesheets="@../CssFiles/style.css" />
                                  </children>
                                  <VBox.margin>
                                     <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
@@ -157,7 +157,7 @@
                               </HBox>
                               <HBox alignment="CENTER" prefHeight="42.0" prefWidth="285.0" styleClass="signupinputBox" stylesheets="@../CssFiles/style.css">
                                  <children>
-                                    <TextField prefHeight="26.0" prefWidth="245.0" promptText="Enter address" styleClass="transparentback" stylesheets="@../CssFiles/style.css" />
+                                    <TextField fx:id="address_text_field" prefHeight="26.0" prefWidth="245.0" promptText="Enter address" styleClass="transparentback" stylesheets="@../CssFiles/style.css" />
                                     <ImageView fitHeight="24.0" fitWidth="51.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../images/home_24dp_5F6368.png" />
@@ -168,7 +168,23 @@
                                     </ImageView>
                                  </children>
                                  <VBox.margin>
-                                    <Insets bottom="110.0" left="20.0" right="20.0" top="50.0" />
+                                    <Insets bottom="20.0" left="20.0" right="20.0" top="50.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="42.0" prefWidth="285.0" styleClass="signupinputBox" stylesheets="@../CssFiles/style.css">
+                                 <children>
+                                    <TextField fx:id="password_text_field" prefHeight="26.0" prefWidth="170.0" promptText="password" styleClass="transparentback" stylesheets="@../CssFiles/style.css" />
+                                    <ImageView fitHeight="24.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/passkey.png" />
+                                       </image>
+                                       <HBox.margin>
+                                          <Insets right="15.0" />
+                                       </HBox.margin>
+                                    </ImageView>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets bottom="50.0" left="20.0" right="20.0" />
                                  </VBox.margin>
                               </HBox>
                            </children>
